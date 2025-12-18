@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>For My Love ❤️</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      padding: 10px;
+    }
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 420px;
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease;
+    }
+    h1 { color: #e91e63; margin-bottom: 15px; }
+    p { font-size: 1.05rem; color: #444; line-height: 1.6; }
+    button {
+      margin-top: 20px;
+      padding: 16px 26px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      background: #e91e63;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 260px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(233,30,99,0.4);
+    }
+    .hidden { display: none; }
+    .phone {
+      width: 200px;
+      height: 360px;
+      border: 6px solid #333;
+      border-radius: 25px;
+      margin: 0 auto 20px;
+      position: relative;
+      background: #000;
+    }
+    .screen {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      border-radius: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 10px;
+    }
+    .shayari {
+      font-style: italic;
+      color: #c2185b;
+      margin: 15px 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STEP 1 -->
+  <div class="card" id="step1">
+    <div style="font-size:120px; margin-bottom:20px;">❤️</div>
+    <button onclick="nextStep(1)">Open Heart</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card hidden" id="step2">
+    <h1>Welcome ❤️</h1>
+    <p>I have something special waiting just for you…</p>
+    <button onclick="nextStep(2)">Next</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card hidden" id="step3">
+    <h1>Something Special ✨</h1>
+    <p>Click below to open it</p>
+    <button onclick="nextStep(3)">Open</button>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="card hidden" id="step4">
+    <h1>For You 💖</h1>
+    <p class="shayari">
+      "Tumhari ek muskurahat par dil haar baithi hoon,<br />
+      Tumhari har baat mein pyaar paa baithi hoon.<br />
+      Tum saath ho toh duniya haseen lagti hai,<br />
+      Tumhi ho jinse main apni zindagi sajaa baithi hoon."
+    </p>
+    <p>
+      I love you more than words can ever explain. 💕<br />
+      You are my today, my tomorrow, and my always.
+    </p>
+    <button onclick="nextStep(4)">Close</button>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="card hidden" id="step5">
+    <h1>❤️</h1>
+    <p>This message will always stay in my heart.</p>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      document.getElementById('step' + step).classList.add('hidden');
+      document.getElementById('step' + (step + 1)).classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
